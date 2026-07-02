@@ -278,7 +278,7 @@ This project demonstrates practical AI security engineering, including scanner p
 
 ![Scanner Analysis](assets/screenshots/scanner-analysis.png)
 
-### Workspace and Ticket Export
+### Ticket Export
 
 ![Workspace and Ticket Export](assets/screenshots/workspace.png)
 
