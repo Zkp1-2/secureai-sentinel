@@ -285,7 +285,6 @@ This project demonstrates practical AI security engineering, including scanner p
 ### Benchmark
 
 ![Benchmark](assets/screenshots/benchmark.png)
-```
 
 ---
 
