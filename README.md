@@ -270,35 +270,20 @@ This project demonstrates practical AI security engineering, including scanner p
 
 ## Screenshots
 
-Create this folder when adding images to GitHub:
-
-```text
-assets/screenshots/
-```
-
-Suggested screenshots:
-
-- `dashboard.png` — main dashboard with SQL Injection analysis.
-- `scanner-analysis.png` — scanner report upload and parsed findings.
-- `workspace.png` — saved analysis workspace and history.
-- `ticket-export.png` — remediation ticket export.
-- `benchmark.png` — internal benchmark results.
-
-Example Markdown after uploading screenshots:
-
-```markdown
-## Screenshots
-
 ### Dashboard
+
 ![Dashboard](assets/screenshots/dashboard.png)
 
 ### Scanner Analysis
+
 ![Scanner Analysis](assets/screenshots/scanner-analysis.png)
 
 ### Workspace and Ticket Export
+
 ![Workspace and Ticket Export](assets/screenshots/workspace.png)
 
 ### Benchmark
+
 ![Benchmark](assets/screenshots/benchmark.png)
 ```
 
