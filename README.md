@@ -1,14 +1,14 @@
 # SecureAI Sentinel
 
-**AI-assisted vulnerability triage and remediation platform** built with FastAPI, React, local RAG, scanner parsers, CVSS-style risk scoring, workspace storage, and remediation ticket export.
+**SecureAI Sentinel** is an AI-assisted vulnerability triage and remediation platform built with **FastAPI**, **React**, local RAG, scanner report parsers, CVSS-style risk scoring, workspace storage, and remediation ticket export.
 
-SecureAI Sentinel is designed for AI Security, LLM-for-Cybersecurity, and secure software engineering portfolios. It converts raw vulnerability descriptions or scanner outputs into structured security findings, risk scores, attack paths, mitigation plans, and analyst-ready reports.
+It converts raw vulnerability descriptions and scanner outputs into structured security findings, risk scores, attack paths, mitigation plans, analyst workflow statuses, and exportable security reports.
 
-> Status: Stable practical portfolio version. This is an AI-assisted prototype, not a replacement for qualified security review.
+> **Status:** Stable practical portfolio version. This is an AI-assisted security triage prototype, not a replacement for qualified security review.
 
 ---
 
-## Demo workflow
+## Demo Workflow
 
 ```text
 Security text / PDF / scanner report
@@ -32,9 +32,9 @@ SQLite workspace history and finding status tracking
 
 ---
 
-## Key features
+## Key Features
 
-### AI security analysis
+### AI Security Analysis
 
 - Multi-agent workflow:
   - Vulnerability Analyst Agent
@@ -44,13 +44,15 @@ SQLite workspace history and finding status tracking
   - Report Writer Agent
 - Local RAG retrieval over cybersecurity notes.
 - Optional LLM mode through OpenAI-compatible or Ollama-compatible endpoints.
-- Hallucination guardrails through deterministic evidence extraction and local knowledge context.
+- Evidence-grounded analysis to reduce hallucination risk.
+- Deterministic fallback mode for repeatable demo results.
 
-### Practical scanner ingestion
+### Practical Scanner Ingestion
 
 Supported input types:
 
-- Plain text, Markdown, logs
+- Plain text reports
+- Markdown and log files
 - PDF reports
 - JSON reports
 - XML reports
@@ -65,9 +67,13 @@ Built-in parser support:
 - Generic vulnerability CSV
 - Generic JSON/XML fallback
 
-Sample reports are included in `samples/`.
+Sample scanner reports are included in:
 
-### Risk triage and analyst workflow
+```text
+samples/
+```
+
+### Risk Triage and Analyst Workflow
 
 - CVSS-style risk vector:
   - Attack Vector
@@ -77,8 +83,8 @@ Sample reports are included in `samples/`.
   - Confidentiality, Integrity, Availability impact
   - Exploitability
   - Business Impact
-- Priority mapping: P0, P1, P2, P3
-- Recommended remediation SLA
+- Priority mapping: P0, P1, P2, P3.
+- Recommended remediation SLA.
 - Finding status workflow:
   - Needs Review
   - Confirmed
@@ -88,22 +94,22 @@ Sample reports are included in `samples/`.
 - Remediation ticket export as Markdown.
 - SQLite workspace with saved analysis history.
 
-### Reporting and evaluation
+### Reporting and Evaluation
 
 - Markdown report export.
 - JSON result export.
 - Internal benchmark for regression testing.
 - Evaluation signals:
-  - retrieval coverage
-  - confidence
-  - input parser type
-  - agent trace summaries
+  - Retrieval coverage
+  - Confidence
+  - Input parser type
+  - Agent trace summaries
 
-> Benchmark note: the included benchmark is a small curated regression suite for project validation. It is not a claim of real-world scanner accuracy.
+> **Benchmark note:** the included benchmark is a small curated regression suite for project validation. It is not a claim of real-world scanner accuracy.
 
 ---
 
-## Tech stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -117,7 +123,7 @@ Sample reports are included in `samples/`.
 
 ---
 
-## Project structure
+## Project Structure
 
 ```text
 secureai-sentinel/
@@ -147,43 +153,63 @@ secureai-sentinel/
 
 ---
 
-## Quick start on Windows PowerShell
+## Quick Start
 
-### Backend
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Zkp1-2/secureai-sentinel.git
+cd secureai-sentinel
+```
+
+### 2. Run the backend
+
+```bash
+cd backend
+python -m venv .venv
+```
+
+On **Windows PowerShell**:
 
 ```powershell
-cd "D:\SecureAI Sentinel\secureai-sentinel-github-ready\backend"
-python -m venv .venv
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
 ```
 
-If activation fails, run directly through the virtual environment:
+If activation fails on Windows, run directly through the virtual environment:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000
 ```
 
-Backend URL:
+On **macOS/Linux**:
+
+```bash
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+```
+
+The backend will run at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-### Frontend
+### 3. Run the frontend
 
 Open a second terminal:
 
-```powershell
-cd "D:\SecureAI Sentinel\secureai-sentinel-github-ready\frontend"
+```bash
+cd frontend
 npm install
 npm run dev
 ```
 
-Frontend URL:
+The frontend will run at:
 
 ```text
 http://127.0.0.1:5173
@@ -202,7 +228,7 @@ Frontend: `http://127.0.0.1:5173`
 
 ---
 
-## How to test
+## How to Test
 
 1. Run the backend and frontend.
 2. Use built-in sample buttons:
@@ -226,7 +252,59 @@ Frontend: `http://127.0.0.1:5173`
 
 ---
 
-## Example CV bullet points
+## Example Use Cases
+
+### Manual Vulnerability Review
+
+Paste a vulnerability description such as SQL injection, XSS, SSRF, RCE, weak authentication, or broken access control. SecureAI Sentinel will detect findings, score risk, generate attack paths, and create remediation recommendations.
+
+### Scanner Report Triage
+
+Upload scanner output from supported tools such as OWASP ZAP, Trivy, Semgrep, Nmap, or CSV-based vulnerability trackers. The system normalizes findings, extracts evidence, groups security issues, and generates an analyst-ready report.
+
+### Security Portfolio Demonstration
+
+This project demonstrates practical AI security engineering, including scanner parsing, local RAG, multi-agent analysis, risk scoring, workflow storage, and security report generation.
+
+---
+
+## Screenshots
+
+Create this folder when adding images to GitHub:
+
+```text
+assets/screenshots/
+```
+
+Suggested screenshots:
+
+- `dashboard.png` — main dashboard with SQL Injection analysis.
+- `scanner-analysis.png` — scanner report upload and parsed findings.
+- `workspace.png` — saved analysis workspace and history.
+- `ticket-export.png` — remediation ticket export.
+- `benchmark.png` — internal benchmark results.
+
+Example Markdown after uploading screenshots:
+
+```markdown
+## Screenshots
+
+### Dashboard
+![Dashboard](assets/screenshots/dashboard.png)
+
+### Scanner Analysis
+![Scanner Analysis](assets/screenshots/scanner-analysis.png)
+
+### Workspace and Ticket Export
+![Workspace and Ticket Export](assets/screenshots/workspace.png)
+
+### Benchmark
+![Benchmark](assets/screenshots/benchmark.png)
+```
+
+---
+
+## Example CV Bullet Points
 
 - Built a full-stack AI-assisted vulnerability triage platform using FastAPI, React, local RAG, scanner parsers, and CVSS-style risk scoring.
 - Implemented automated ingestion for OWASP ZAP, Trivy, Semgrep, Nmap, CSV, PDF, JSON, XML, and text-based vulnerability reports.
@@ -244,7 +322,7 @@ Frontend: `http://127.0.0.1:5173`
 
 ---
 
-## Future work
+## Future Work
 
 - Add richer CVSS 3.1/4.0 scoring.
 - Add Jira/GitHub Issues API integration.
@@ -252,3 +330,9 @@ Frontend: `http://127.0.0.1:5173`
 - Add authentication and multi-user roles.
 - Add containerized vector database support.
 - Add a larger real-world evaluation dataset.
+
+---
+
+## Disclaimer
+
+SecureAI Sentinel is intended for educational, portfolio, and defensive security research use. It should not be used as the sole basis for production security decisions.
