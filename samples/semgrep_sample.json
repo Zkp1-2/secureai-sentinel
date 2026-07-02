@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "check_id": "python.lang.security.audit.subprocess-shell-true",
+      "path": "app/routes.py",
+      "start": {"line": 42},
+      "extra": {
+        "severity": "ERROR",
+        "message": "subprocess call uses shell=True with user input, which may allow command injection.",
+        "lines": "subprocess.run(user_cmd, shell=True)"
+      }
+    }
+  ]
+}

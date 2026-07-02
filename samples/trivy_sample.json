@@ -1,0 +1,17 @@
+{
+  "Results": [
+    {
+      "Target": "demo-webapp:latest",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-12345",
+          "PkgName": "openssl",
+          "Severity": "CRITICAL",
+          "Title": "Known critical vulnerability in OpenSSL",
+          "Description": "The installed OpenSSL package is outdated and has a known vulnerability. A fixed version is available.",
+          "FixedVersion": "3.0.13"
+        }
+      ]
+    }
+  ]
+}

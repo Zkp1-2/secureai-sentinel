@@ -1,0 +1,3 @@
+title,severity,location,description,evidence,recommendation
+Stored XSS,High,/profile,User input is reflected without output encoding,script and session cookie,Apply contextual output encoding and CSP
+Weak Admin Authentication,Critical,/admin,No MFA and no account lockout for admin users,weak password brute force,Enforce MFA and login throttling

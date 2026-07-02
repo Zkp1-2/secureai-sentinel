@@ -1,0 +1,9 @@
+case_id,title,expected_categories,detected_categories,category_recall,expected_min_severity,predicted_severity,severity_pass,risk_score
+case-sqli-001,SQL Injection Login Endpoint,SQL Injection; Broken Access Control,Broken Access Control; SQL Injection,1.0,Critical,Critical,True,99
+case-xss-001,Stored XSS Profile Page,Cross-Site Scripting,Cross-Site Scripting,1.0,High,High,True,70
+case-auth-001,Weak Admin Authentication,Weak Authentication; Broken Access Control,Broken Access Control; Weak Authentication,1.0,Critical,Critical,True,100
+case-ssrf-001,SSRF URL Preview,Server-Side Request Forgery,Server-Side Request Forgery,1.0,High,High,True,79
+case-path-001,Path Traversal Download,Path Traversal; Credential Exposure,Credential Exposure; Path Traversal,1.0,High,Critical,True,90
+case-rce-001,Remote Code Execution Deserialization,Remote Code Execution; Broken Access Control,Broken Access Control; Remote Code Execution,1.0,Critical,Critical,True,100
+case-config-001,Public Debug Dashboard,Insecure Configuration; Credential Exposure,Credential Exposure; Insecure Configuration,1.0,High,Critical,True,99
+case-dep-001,Outdated Dependency With Known CVE,Vulnerable Dependency,Vulnerable Dependency,1.0,High,High,True,69

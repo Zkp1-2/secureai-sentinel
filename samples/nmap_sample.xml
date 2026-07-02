@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<nmaprun scanner="nmap">
+  <host>
+    <address addr="192.0.2.10" addrtype="ipv4" />
+    <ports>
+      <port protocol="tcp" portid="22"><state state="open"/><service name="ssh" product="OpenSSH"/></port>
+      <port protocol="tcp" portid="8080"><state state="open"/><service name="http" product="debug-dashboard"/></port>
+    </ports>
+  </host>
+</nmaprun>

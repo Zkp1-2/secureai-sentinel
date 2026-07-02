@@ -1,0 +1,137 @@
+{
+  "total_cases": 8,
+  "average_category_recall": 1.0,
+  "severity_pass_rate": 1.0,
+  "results": [
+    {
+      "case_id": "case-sqli-001",
+      "title": "SQL Injection Login Endpoint",
+      "expected_categories": [
+        "SQL Injection",
+        "Broken Access Control"
+      ],
+      "detected_categories": [
+        "Broken Access Control",
+        "SQL Injection"
+      ],
+      "category_recall": 1.0,
+      "expected_min_severity": "Critical",
+      "predicted_severity": "Critical",
+      "severity_pass": true,
+      "risk_score": 99
+    },
+    {
+      "case_id": "case-xss-001",
+      "title": "Stored XSS Profile Page",
+      "expected_categories": [
+        "Cross-Site Scripting"
+      ],
+      "detected_categories": [
+        "Cross-Site Scripting"
+      ],
+      "category_recall": 1.0,
+      "expected_min_severity": "High",
+      "predicted_severity": "High",
+      "severity_pass": true,
+      "risk_score": 70
+    },
+    {
+      "case_id": "case-auth-001",
+      "title": "Weak Admin Authentication",
+      "expected_categories": [
+        "Weak Authentication",
+        "Broken Access Control"
+      ],
+      "detected_categories": [
+        "Broken Access Control",
+        "Weak Authentication"
+      ],
+      "category_recall": 1.0,
+      "expected_min_severity": "Critical",
+      "predicted_severity": "Critical",
+      "severity_pass": true,
+      "risk_score": 100
+    },
+    {
+      "case_id": "case-ssrf-001",
+      "title": "SSRF URL Preview",
+      "expected_categories": [
+        "Server-Side Request Forgery"
+      ],
+      "detected_categories": [
+        "Server-Side Request Forgery"
+      ],
+      "category_recall": 1.0,
+      "expected_min_severity": "High",
+      "predicted_severity": "High",
+      "severity_pass": true,
+      "risk_score": 79
+    },
+    {
+      "case_id": "case-path-001",
+      "title": "Path Traversal Download",
+      "expected_categories": [
+        "Path Traversal",
+        "Credential Exposure"
+      ],
+      "detected_categories": [
+        "Credential Exposure",
+        "Path Traversal"
+      ],
+      "category_recall": 1.0,
+      "expected_min_severity": "High",
+      "predicted_severity": "Critical",
+      "severity_pass": true,
+      "risk_score": 90
+    },
+    {
+      "case_id": "case-rce-001",
+      "title": "Remote Code Execution Deserialization",
+      "expected_categories": [
+        "Remote Code Execution",
+        "Broken Access Control"
+      ],
+      "detected_categories": [
+        "Broken Access Control",
+        "Remote Code Execution"
+      ],
+      "category_recall": 1.0,
+      "expected_min_severity": "Critical",
+      "predicted_severity": "Critical",
+      "severity_pass": true,
+      "risk_score": 100
+    },
+    {
+      "case_id": "case-config-001",
+      "title": "Public Debug Dashboard",
+      "expected_categories": [
+        "Insecure Configuration",
+        "Credential Exposure"
+      ],
+      "detected_categories": [
+        "Credential Exposure",
+        "Insecure Configuration"
+      ],
+      "category_recall": 1.0,
+      "expected_min_severity": "High",
+      "predicted_severity": "Critical",
+      "severity_pass": true,
+      "risk_score": 99
+    },
+    {
+      "case_id": "case-dep-001",
+      "title": "Outdated Dependency With Known CVE",
+      "expected_categories": [
+        "Vulnerable Dependency"
+      ],
+      "detected_categories": [
+        "Vulnerable Dependency"
+      ],
+      "category_recall": 1.0,
+      "expected_min_severity": "High",
+      "predicted_severity": "High",
+      "severity_pass": true,
+      "risk_score": 69
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "case-sqli-001",
+    "title": "SQL Injection Login Endpoint",
+    "text": "A public web application has a SQL injection vulnerability in the login form. An unauthenticated attacker can bypass authentication and access sensitive user records from the database. The system does not use parameterized queries and database permissions are overly broad.",
+    "expected_categories": ["SQL Injection", "Broken Access Control"],
+    "expected_min_severity": "Critical"
+  },
+  {
+    "id": "case-xss-001",
+    "title": "Stored XSS Profile Page",
+    "text": "A web application reflects user input directly into the profile page without output encoding. An attacker can inject JavaScript that executes in another user's browser and steals session cookies. There is no Content Security Policy.",
+    "expected_categories": ["Cross-Site Scripting"],
+    "expected_min_severity": "High"
+  },
+  {
+    "id": "case-auth-001",
+    "title": "Weak Admin Authentication",
+    "text": "The admin portal does not enforce multi-factor authentication. Passwords are weak and there is no account lockout after repeated failed login attempts. An attacker may brute-force administrator accounts and gain access to sensitive configuration settings.",
+    "expected_categories": ["Weak Authentication", "Broken Access Control"],
+    "expected_min_severity": "Critical"
+  },
+  {
+    "id": "case-ssrf-001",
+    "title": "SSRF URL Preview",
+    "text": "A URL preview feature accepts any webhook URL and the server fetches the address directly. An attacker can access internal endpoints and the cloud metadata service at 169.254.169.254.",
+    "expected_categories": ["Server-Side Request Forgery"],
+    "expected_min_severity": "High"
+  },
+  {
+    "id": "case-path-001",
+    "title": "Path Traversal Download",
+    "text": "The download file endpoint accepts a file path parameter. Attackers can use ../ path traversal sequences to read arbitrary files outside the intended upload directory, including configuration files containing secrets.",
+    "expected_categories": ["Path Traversal", "Credential Exposure"],
+    "expected_min_severity": "High"
+  },
+  {
+    "id": "case-rce-001",
+    "title": "Remote Code Execution Deserialization",
+    "text": "A backend service performs unsafe deserialization of untrusted data. Attackers may achieve remote code execution and execute commands on the server. The service runs with broad privileges.",
+    "expected_categories": ["Remote Code Execution", "Broken Access Control"],
+    "expected_min_severity": "Critical"
+  },
+  {
+    "id": "case-config-001",
+    "title": "Public Debug Dashboard",
+    "text": "A production debug mode dashboard is exposed to the internet with default password credentials. The dashboard reveals environment variables, logs, and internal service URLs.",
+    "expected_categories": ["Insecure Configuration", "Credential Exposure"],
+    "expected_min_severity": "High"
+  },
+  {
+    "id": "case-dep-001",
+    "title": "Outdated Dependency With Known CVE",
+    "text": "The application uses an outdated dependency version with a known CVE. The vulnerable library is reachable from a public API endpoint and there is no patch management process.",
+    "expected_categories": ["Vulnerable Dependency"],
+    "expected_min_severity": "High"
+  }
+]
